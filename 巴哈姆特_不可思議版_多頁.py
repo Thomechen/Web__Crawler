@@ -16,13 +16,13 @@ for i in range(sinput+1):
         titles = soup.find_all('p',class_="b-list__main__title")
         for t in titles:
             print(t.string)
-            # print("https://forum.gamer.com.tw/"+t.get('href'))
+            print("https://forum.gamer.com.tw/"+t.get('href'))
     elif i > 1:
         r = requests.get('https://forum.gamer.com.tw/B.php?page={}&bsn=60433'.format(str(i)))
         soup = BeautifulSoup(r.text,'html.parser')
         titles = soup.find_all('p',class_="b-list__main__title")
         for t in titles:
             print(t.string)
-            # print("https://forum.gamer.com.tw/"+t.get('href'))
+            print("https://forum.gamer.com.tw/"+t.get('href'))
 i += 1
 
