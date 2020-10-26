@@ -26,3 +26,13 @@ for o_p_l,o_t_l in zip(oil_price_list,oil_tag_list):
     plt.title(o_t_l+' price history') # 設定圖表標題
     plt.legend(loc = 'upper left')
     plt.show()
+#92/95/98/超柴歷史紀錄合併圖表建立
+plt.plot(r.index,oil_92, color='b',label = "Oil_92")
+plt.plot(r.index,oil_95, color='r',label = "Oil_95")
+plt.plot(r.index,oil_98, color='g',label = "Oil_98")
+plt.plot(r.index,oil_super, color='c',label = "Oil_Super")
+plt.xlabel('Date')
+plt.xticks(r.index, rotation='vertical')
+plt.title('Oil Price History') # 設定圖表標題
+plt.legend(loc = 'upper left')
+plt.show()
