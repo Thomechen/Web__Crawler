@@ -17,9 +17,31 @@ oil_95 = r["95 無鉛汽油"]
 oil_98 = r["98 無鉛汽油"]
 oil_super = r["超級/高級柴油"]
 
+#92無鉛汽油歷史紀錄圖表
 plt.plot(r.index, oil_92, color='r',label = "Oil_92")
 plt.xlabel('Date')
 plt.xticks(r.index, rotation='vertical')
 plt.title('Oil_92 price history') # 設定圖表標題
+plt.legend(loc = 'upper left')
+plt.show()
+#95無鉛汽油歷史紀錄圖表
+plt.plot(r.index, oil_95, color='r',label = "Oil_95")
+plt.xlabel('Date')
+plt.xticks(r.index, rotation='vertical')
+plt.title('Oil_95 price history') # 設定圖表標題
+plt.legend(loc = 'upper left')
+plt.show()
+#98無鉛汽油歷史紀錄圖表
+plt.plot(r.index, oil_98, color='r',label = "Oil_98")
+plt.xlabel('Date')
+plt.xticks(r.index, rotation='vertical')
+plt.title('Oil_98 price history') # 設定圖表標題
+plt.legend(loc = 'upper left')
+plt.show()
+#98無鉛汽油歷史紀錄圖表
+plt.plot(r.index, oil_super, color='r',label = "Oil_Super")
+plt.xlabel('Date')
+plt.xticks(r.index, rotation='vertical')
+plt.title('Oil_Super price history') # 設定圖表標題
 plt.legend(loc = 'upper left')
 plt.show()
