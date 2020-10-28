@@ -7,8 +7,10 @@ r = requests.get(url)
 tags = ['5G','AI']
 categroys = ['startup','opinion','區塊鏈','dictionary']
 features = ['aws-tldg-2020','2019aws']
-artList = []
-linkList = []
+a_l_tag = []
+l_l_tag = []
+a_l_categroy =[]
+l_l_categroy =[]
 if r.status_code == 200:
     # print('網頁讀取成功')
     for i in range(len(tags)):
@@ -17,8 +19,8 @@ if r.status_code == 200:
         titles = soup.find_all('a',class_='js-auto_break_title',limit=10)
         links = soup.find_all('a',class_='post_cover',limit=10)
         for t,l in zip(titles,links):
-            artList.append(t.text)
-            linkList.append(l.get('href'))
+            a_l_tag.append(t.text)
+            l_l_tag.append(l.get('href'))
             
     for j in range(len(categroys)):
         r = requests.get(url+'category/'+categroys[j],headers=my_headers)
@@ -26,7 +28,7 @@ if r.status_code == 200:
         titles = soup.find_all('a',class_='js-auto_break_title',limit=10)
         links = soup.find_all('a',class_='post_cover',limit=10)
         for t,l in zip(titles,links):
-            artList.append(t.text)
-            linkList.append(l.get('href'))
+            a_l_categroy.append(t.text)
+            l_l_categroy.append(l.get('href'))
 else:
     print('請加上headers')
