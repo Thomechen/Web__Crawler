@@ -12,7 +12,6 @@ request = requests.Session()
 url = 'https://tw.news.yahoo.com/'
 r = request.get(url)
 title_list = []
-#
 links_list = []
 if r.status_code == 200:
     soup = BeautifulSoup(r.text,'html.parser')
