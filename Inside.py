@@ -32,7 +32,6 @@ if r.status_code == 200:
         soup = BeautifulSoup(r.text,'html.parser')
         titles = soup.find_all('a',class_='js-auto_break_title')
         links = soup.find_all('a',class_='post_cover')
-        a_l_categroy.append(categroys_name[j]+'-----------------')
         for t,l in zip(titles,links):
             a_l_categroy.append(t.text)
             l_l_categroy.append(l.get('href'))
@@ -42,12 +41,14 @@ if r.status_code == 200:
         soup = BeautifulSoup(r.text,'html.parser')
         titles = soup.find_all('a',class_='js-auto_break_title')
         links = soup.find_all('a',class_='post_cover')
-        a_l_features.append(features_name[k]+'-----------------')
         for t,l in zip(titles,links):
             a_l_features.append(t.text)
             l_l_features.append(l.get('href'))
-else:
-    print('請加上headers')
-    
-article_data = {'a_l_tag':a_l_tag,'l_l_tag':l_l_tag}
-d = pd.DataFrame(article_data)
+
+a_l_tag_data = {'Tag_article':a_l_tag,'Tag_Link':l_l_tag}
+Tag_d = pd.DataFrame(a_l_tag_data)
+a_l_categroy_data = {'Categroy_article':a_l_categroy,'Categroy_Link':l_l_categroy}
+Categroy_d = pd.DataFrame(a_l_categroy_data)
+a_l_features_data = {'Features_article':a_l_features,'Features_Link':l_l_features}
+Feature_d = pd.DataFrame(a_l_features_data)
+
