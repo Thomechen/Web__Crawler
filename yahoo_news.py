@@ -7,7 +7,6 @@ Created on Mon Nov  2 13:54:04 2020
 
 import requests
 from bs4 import BeautifulSoup
-import re
 import pandas as pd
 request = requests.Session()
 url = 'https://tw.news.yahoo.com/'
