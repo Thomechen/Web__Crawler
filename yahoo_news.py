@@ -15,7 +15,6 @@ title_list = []
 #
 links_list = []
 if r.status_code == 200:
-    r = request.get(url)
     soup = BeautifulSoup(r.text,'html.parser')
     titles = soup.find_all('li',class_='Pos(r) Lh(1.5) H(24px) Mb(8px)')
     #頭條標題
