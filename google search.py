@@ -11,7 +11,7 @@ import pandas as pd
 request = requests.Session()
 search = str(input("請輸入欲搜尋關鍵字:"))
 #搜尋關鍵字
-url ='https://www.google.com.tw/search?q='
+url = 'https://www.google.com.tw/search?q='
 r = request.get(url+search)
 title_list = []
 link_list = []
