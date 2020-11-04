@@ -10,8 +10,21 @@ r = session.post('https://www.ptt.cc/ask/over18',data=my_data)
 
 url = 'https://www.ptt.cc/bbs/Gossiping/index.html'
 
+search = input('輸入關鍵字查詢:')
+if search == "":
+    search = ""
 
-while True:
+page = input('輸入欲搜尋頁數(預設:1):')
+if page == "":
+    page = 1
+    
+dates = input('輸入日期(MM/DD):')
+if dates =="":
+    dates =""
+
+a = 1
+
+while a <= int(page):
     r2 = session.get(url)
     if r2.status_code == 200:
         soup = BeautifulSoup(r2.text,'html.parser')
@@ -20,7 +33,7 @@ while True:
         date = soup.select('div.date')
         newUrl = 'https://www.ptt.cc'+soup.select('div.btn-group.btn-group-paging > a')[1].get('href')
         for t,l,d in zip(titles,links,date):
-            if 'Re:' in t.text or '11/03' not in d.text:
+            if 'Re:' in t.text or 'Fw:' in t.text or search not in t.text or dates not in d.text:
                  continue
             print(d.text+' 標題:'+t.text.strip())
             r3 = session.get('https://www.ptt.cc'+l.get('href'))
@@ -33,3 +46,4 @@ while True:
             content = content.split(date)[1]
             # print(content)
         url = newUrl
+        a += 1
