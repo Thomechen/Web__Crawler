@@ -4,8 +4,6 @@ Created on Tue Nov  3 21:03:03 2020
 
 @author: ASUS
 """
-
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -58,6 +56,6 @@ for y in range(len(year)):
             except:
                 continue
     
-data = {'Date':date_info,'Value':value_info}
+data = {'Value':value_info}
 df = pd.DataFrame(data,index=date_info)
 print('Done')
