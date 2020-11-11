@@ -1,7 +1,7 @@
-
+#%%
 import re
 import time
-import pandas
+import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver #載入 webdriver 模組
 
@@ -40,8 +40,9 @@ data = {'Date':change_date_list,
         'Oil_95':oil_95_value,
         'Oil_98':oil_98_value,
         'Oil_Super':oil_super_value}
-
-df = pandas.DataFrame(data)
-
+df = pd.DataFrame(data)
 
 
+
+
+# %%
