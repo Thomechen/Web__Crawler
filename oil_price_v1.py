@@ -41,8 +41,7 @@ data = {'Date':change_date_list,
         'Oil_98':oil_98_value,
         'Oil_Super':oil_super_value}
 df = pd.DataFrame(data)
-
-
-
+df.to_csv('F:\Python\Web__Crawler\oil_price.csv')
+#存檔csv
 
 # %%
